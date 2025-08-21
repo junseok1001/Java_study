@@ -13,7 +13,7 @@ public class Test03 {
         System.out.print("단수를 입력하세요 : ");
         int num1 = scan.nextInt();
 
-        System.out.println(num1 + " X 1 = " + (num1 * 1) );
+        System.out.println(num1 + " X 1 = " + (num1 * 1 ) );
         System.out.println(num1 + " X 2 = " + (num1 * 2) );
         System.out.println(num1 + " X 3 = " + (num1 * 3) );
         System.out.println(num1 + " X 4 = " + (num1 * 4) );
