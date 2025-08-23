@@ -2,7 +2,7 @@ package Variable.test;
 
 import java.util.Scanner;
 
-public class Test04 {
+public class test01 {
 
     public static void main(String[] args) {
 
