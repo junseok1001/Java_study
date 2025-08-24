@@ -1,4 +1,4 @@
-package Variable.test;
+package candition.test;
 
 import java.util.Scanner;
 
