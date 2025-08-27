@@ -39,13 +39,16 @@ public class Test01 {
 //        }
 
         //문제 5번;
+        // hint 공백과 별찍기의 숫자 새기
         for(int i = 1; i <= 5; i++) {
-            for (int j = 0; j < i; j++) {
-                for(int k = 0; k < j; k++){
-                    System.out.println(" ");
-                }
+            for(int k = 0; k < 5 - i; k++){
+                System.out.print(" ");
+            }
+            for (int j = 0; j <  i; j++) {
                 System.out.print("*");
             }
+            System.out.println();
         }
+
     }
 }
