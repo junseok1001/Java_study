@@ -23,12 +23,29 @@ public class Test01 {
         }
 
         //연습문제3
+//        for(int i = 1; i <= 5; i++) {
+//            for (int j = 0; j < i; j++) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+
+        //문제 4번
+//        for(int i = 5; i >= 0; i--){
+//            for(int j = 0; j < i; j++){
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+
+        //문제 5번;
         for(int i = 1; i <= 5; i++) {
             for (int j = 0; j < i; j++) {
+                for(int k = 0; k < j; k++){
+                    System.out.println(" ");
+                }
                 System.out.print("*");
             }
-            System.out.println();
-
         }
     }
 }
