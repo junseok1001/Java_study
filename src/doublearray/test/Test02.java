@@ -13,7 +13,7 @@ public class Test02 {
 //                num[i][j] = 10;
 //            }
 //        }
-//        isPrintArray(num);
+//        PrintArray(num);
 
         //문제 2
 //        int [][] num = new int[3][4];
@@ -23,7 +23,7 @@ public class Test02 {
 //             }
 //         }
 //
-//         isPrintArray(num);
+//         PrintArray(num);
 
         //문제 3
 //        int [][] num1 = new int [3][3];
@@ -33,7 +33,7 @@ public class Test02 {
 //            }
 //        }
 //
-//        isPrintArray(num1);
+//        PrintArray(num1);
 
 
         //문제 4
@@ -48,43 +48,35 @@ public class Test02 {
 //        isPrintArray(array);
 
         //문제 5
-//        int [][] array = new int [3][3];
-//        for(int i = 0; i < array.length; i++){
-//
-//
-//            for(int j = 0; j < array[i].length; j++){
-//                if(i == 0){
-//                    array[i][j] = j + 1;
-//                }else if(i == 1){
-//                    array[i][j] = (j + 4);
-//                }else{
-//                    array[i][j] = (j + 7);
-//                }
-//
-//            }
-//
-//        }
-//
-//        isPrintArray(array);
-
         int [][] array = new int [3][3];
+            int scores = 0;
         for(int i = 0; i < array.length; i++){
-
-
             for(int j = 0; j < array[i].length; j++){
-                if(j == 0){
-                    array[i][j] = i + 1;
-                }else if(j == 1){
-                    array[i][j] = (i + 4);
-                }else{
-                    array[i][j] = (i + 7);
-                }
+                scores++;
+                array[i][j] = scores;
 
             }
 
         }
 
-        isPrintArray(array);
+        PrintArray(array);
+
+
+        // 문제 6번
+//        int [][] array = new int [3][3];
+//        int score = 0;
+//        for(int i = 0; i < array.length; i++){
+//
+//
+//            for(int j = 0; j < array[i].length; j++){
+//                score++;
+//                array[j][i] = score;
+//
+//            }
+//
+//        }
+//
+//        PrintArray(array);
 
 
 
@@ -92,7 +84,7 @@ public class Test02 {
     }
 
 
-    public static void isPrintArray(int [][]Array){
+    public static void PrintArray(int [][]Array){
 
         for(int i = 0; i < Array.length; i++){
             //Array[i]
