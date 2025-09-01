@@ -3,7 +3,7 @@ package function.test;
 import java.util.Scanner;
 
 public class Test02 {
-    //함수 만들기 응용
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 //        1. 합 구하기
@@ -32,7 +32,7 @@ public class Test02 {
 
     }
 
-
+    //100이넘으면 멈춰라
     public static int getTotalSum(int num){
 
         int box = 0;
@@ -49,18 +49,15 @@ public class Test02 {
 
     }
 
+    //소수판별
     public static boolean primeNumber(int num) {
-        boolean isPrimeNumber = true;
-        for (int i = 2; i < num; i++) {
+        for (int i = 2; i <Math.sqrt(num); i++) {
             if (num % i == 0) {
-                isPrimeNumber = false;
-                break;
+                return false;
             }
 
         }
 
-        return isPrimeNumber;
+        return true;
     }
-
-
 }

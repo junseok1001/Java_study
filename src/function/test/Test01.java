@@ -1,10 +1,9 @@
 package function.test;
 
-import javax.crypto.spec.PSource;
 import java.util.Scanner;
 
 public class Test01 {
-    //함수 연습문제
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -38,7 +37,7 @@ public class Test01 {
         System.out.print("숫자를 입력하세요 :");
         int number1 = scan.nextInt();
 
-        getsniffling(number1);
+        System.out.println(getsniffling(number1));
 
 
     }
@@ -65,17 +64,17 @@ public class Test01 {
 
     }
 
+    // 짝수 홀수 판단
     public static int getsniffling(int num1){
 
 
         if(num1 % 2 == 0){
-            System.out.println(0);
             return 0;
         }else {
-            System.out.println(1);
             return 1;
         }
 
 
     }
+
 }

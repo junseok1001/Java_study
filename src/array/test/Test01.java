@@ -1,93 +1,72 @@
 package array.test;
 
-import java.util.Scanner;
-
 public class Test01 {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int[] numbers = {3, 5, 2, 10, 39};
-        // 1. 배열 값 변경
-        //인덱스에 숫자 들어갈 놈이랑
-        // 값을 넣어야 되는거 확인하기
-//        System.out.print("변경할 index와 값을 입력하세요 : ");
-//        int index = scan.nextInt();
-//        int changer = scan.nextInt();
-//
-//        for(int i = 0; i < numbers.length; i++){
-//            if(i == index){
-//                numbers[index] = changer;
-//            }
-//            System.out.print(numbers[i] + " ");
-//        }
-//        System.out.println();
-
-        // 2. 점수 채점
-//        char[] scores = {'X', 'O', 'O', 'X', 'X', 'O', 'O', 'O', 'O', 'X'};
-//        int count = 0;
-//        for(int i = 0; i < scores.length; i++){
-//            if(scores[i] == 'O'){
-//                count++;
-//            }
-//        }
-//        System.out.println("채점 결과는 " + (count * 10) + "점 입니다.");
-
-
-        //3. 임금 계산
-        //             월 화 수 목 금  토 일
-        int[] works = {3, 5, 5, 3, 5, 3, 5};
-//        int workTime = 0;
-//        int weekWorkTime = 0;
-//        int weekend = 0;
-//        int weekday = 0;
-//        for(int i = 0; i < works.length; i++){
-//            //평일을 나누고
-//            if(i < 5){
-//                workTime += works[i];
-//                weekday = workTime * 8500  ;
-//            }else{
-//                weekWorkTime += works[i];
-//                weekend = weekWorkTime * 9500 ;
-//            }
-//
-//
-//        }
-//        System.out.println("일주일간 총 임금은 " + (weekday + weekend) + "원 입니다.");
-        //임금을 바로바로 처리하는 단계
-//        int wages = 0;
-//        int workTime = 0;
-//        int sum = 0;
-//        for(int i = 0; i < works.length -2; i++){
-//            wages = works[i] * 8500;
-//            sum += wages;
-//        }
-//        for(int i = works.length -2; i < works.length; i++){
-//            wages = works[i] * 9500;
-//            sum += wages;
-//        }
-//        System.out.println("일주일간 총 임금은 " + sum + "원 입니다.");
-
-        //4. 배열 값 입력
-        //무한 루프를 돌리고 num에다가 짝수만 차곡 차곡 쌓다가 다차면 스탑
-        int stack = 0;
-        int sum = 0;
-        int [] num = new int[5];
-        for(int i = 0; ;  ){
-            System.out.print("수를 입력하세요 : ");
-            stack = scan.nextInt();
-            if(stack % 2 == 0){
-                num[i] = stack;
-                i++;
-            }
-            if(num[4] == stack){
-                break;
-            }
-        }
-
-        for(int i = 0; i < num.length; i ++){
-            System.out.print(num[i] + " ");
+        int[] numbers = {3, 8, 9, 4, 2, 1, 7, 5};
+//        1. 배열 값 접근
+//        배열의 4번째 값을 6으로 바꾸세요.
+        numbers[3] =  6;
+//        2. 배열 출력
+//        배열의 값을 순서대로 출력하세요.
+        for(int i = 0; i < numbers.length; i++){
+            System.out.print(numbers[i] + " ");
         }
         System.out.println();
+//        3. 배열 출력
+//        배열의 값을 반대 순서(역순)로 출력하세요.
+        for(int i = numbers.length - 1; i >= 0 ; i--){
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println();
+//        4. 배열 출력
+//        배열에서 짝수번째 위치에 있는 값들을 출력하세요.
+        for(int i = 0; i < numbers.length; i ++){
+            if(i % 2 == 1){
+                System.out.print(numbers[i] + " ");
+            }
+        }
+        System.out.println();
+
+//        5. index
+//        배열의 값들 중 2가 저장된 index를 출력하세요.
+        for(int i = 0; i < numbers.length; i ++){
+            if(numbers[i] == 2){
+                System.out.println("2가 저장된 index : " + i);
+            }
+        }
+//        6. 최대값
+//        배열의 값들 중 가장 큰 값을 출력하세요.
+        int max = numbers[0];
+        for(int i = 1; i < numbers.length; i++){
+            // 값들을 하나 하나 씩 비교하는게 필요
+            if(max < numbers[i]){
+                max = numbers[i];
+            }
+        }
+        System.out.println("가장 큰 값은 : " + max);
+
+//        7. 최소값 index
+//        배열의 값들 중 가장 작은 수가 저장된 index를 출력하세요.
+    //    int min = numbers[0];
+        int minIndex = 0;
+        for(int i = 1; i < numbers.length; i ++){
+
+            if(numbers[minIndex] > numbers[i]){
+               // min = numbers[i];// 최소값 저장
+                minIndex = i;
+            }
+        }
+        System.out.println("최소값은 index : " + minIndex);
+
+//        8. 합계
+//        배열의 모든 수의 합을 출력하세요.
+        int sum = 0;
+        for(int i = 0; i < numbers.length; i ++){
+            sum += numbers[i];
+        }
+        System.out.println("값의 합 : " + sum);
+
 
 
 

@@ -1,4 +1,4 @@
-package doubleloop.test;
+package function.doubleloop.test;
 
 import java.util.Scanner;
 
@@ -39,16 +39,29 @@ public class Test01 {
 //        }
 
         //문제 5번;
-        // hint 공백과 별찍기의 숫자 새기
         for(int i = 1; i <= 5; i++) {
-            for(int k = 0; k < 5 - i; k++){
+            for(int j = 0; j < 5 - i; j++){
                 System.out.print(" ");
             }
-            for (int j = 0; j <  i; j++) {
+            for (int k = 0; k < i; k++) {
                 System.out.print("*");
             }
             System.out.println();
         }
 
+        // 6번 문제
+        for(int i = 1; i <= 5; i++) {
+            for(int j = 0; j < 5 - i; j++){
+                System.out.print(" ");
+            }
+
+            // 1 2 3 4 5
+            // 1 3 5 7 9
+            // 2n - 1
+            for (int j = 0; j < 2*i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
