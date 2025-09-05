@@ -37,20 +37,40 @@ public class Product {
     }
     //문자열로 받은 걸 인수들로 쪼개고 비교
     boolean available(String date) {
-        String[] words = new String[3];
-        words = date.split("-");
-        String[] line = new String[3];
-        line = exprtationDate.split("-");
 
-
-        if(Integer.parseInt(words[0]) <= Integer.parseInt(line[0])){
-            if(Integer.parseInt(words[1]) <= Integer.parseInt(line[1])){
-                if(Integer.parseInt(words[2]) <= Integer.parseInt(line[2])){
-                    return false;
-                }
-            }
+        // 앞에 것이 더크다 (1)
+        // 같다 (0)
+        // 뒤에 것이 더크다 (-1)
+        if(exprtationDate.compareTo(date) >= 0) {// return 값 = int {
+            return true;
+        }else{
+            return false;
         }
-        return true;
+
+
+//        int expirationInt = Integer.parseInt(exprtationDate.replace("-" , ""));
+//        int dateInt = Integer.parseInt(date.replace("-", ""));
+//
+//        if(expirationInt >= dateInt){
+//            return true;
+//        }else{
+//            return false;
+//        }
+
+//        String[] words = new String[3];
+//        words = date.split("-");
+//        String[] line = new String[3];
+//        line = exprtationDate.split("-");
+//
+//
+//        if(Integer.parseInt(words[0]) <= Integer.parseInt(line[0])){
+//            if(Integer.parseInt(words[1]) <= Integer.parseInt(line[1])){
+//                if(Integer.parseInt(words[2]) <= Integer.parseInt(line[2])){
+//                    return false;
+//                }
+//            }
+//        }
+//        return true;
     }
 
 

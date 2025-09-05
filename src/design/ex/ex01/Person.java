@@ -23,6 +23,17 @@ public class Person {
     //public : 모든곳에서 사용 가능
     void printInfo() {
         System.out.println("이름 : " + name + " 생년월일 : " + birthday);
+    }
 
+
+    // name 변수 수정기능
+    public void setName(String name){
+        this.name = name;
+    }
+
+
+    // birthday 리턴하는 기능
+    public String getBirthday(){
+        return this.birthday;
     }
 }

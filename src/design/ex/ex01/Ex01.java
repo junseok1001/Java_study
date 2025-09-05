@@ -11,5 +11,15 @@ public class Ex01 {
 
         me.printInfo();
 
+        //개명
+//        me.name = "김진우";
+        me.setName("김진우");
+
+        me.printInfo();
+
+        //생년월일 출력
+//        System.out.println(me.birthday);
+        System.out.println(me.getBirthday());
+
     }
 }
