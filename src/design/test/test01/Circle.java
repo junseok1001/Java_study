@@ -3,11 +3,7 @@ package design.test.test01;
 public class Circle {
 
     private double radios;
-    private double pi = 3.14;
-
-    public Circle(int radios){
-        this.radios = radios;
-    }
+    private double pi;
 
     void printInfo(){
         System.out.println("반지름 : " + radios);
@@ -27,7 +23,9 @@ public class Circle {
         double result = calculateArea() * count;
         return result;
     }
-
+    public Circle(int radios){
+        this.radios = radios;
+    }
 
 
 }

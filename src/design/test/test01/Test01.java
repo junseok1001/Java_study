@@ -14,7 +14,6 @@ public class Test01 {
         System.out.println("원 25개의 넓이는 : " + oShape.calculateArea(25));
 
         //문제 2
-
         Product product = new Product("새우깡", 1300, "2021-03-02");
 
         product.printInfo();
@@ -22,10 +21,11 @@ public class Test01 {
         System.out.println("5개의 가격 : " + product.totalPrice(5));
         System.out.println("13개의 가격 : " + product.totalPrice(13));
 
-        if(product.available("2021-03-01")){
+        if(product.available("2019-12-02")){
             System.out.println("판매 가능 상품");
         }else{
             System.out.println("판매 불가능 상품");
         }
     }
+
 }

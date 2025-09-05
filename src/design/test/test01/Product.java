@@ -1,7 +1,6 @@
 package design.test.test01;
 
 public class Product {
-
     private String goods;
     private int price;
     private String exprtationDate;
@@ -24,22 +23,27 @@ public class Product {
     }
 
     boolean available(String nowdate) {
-        String[] now = new String[nowdate.length()];
-        now = nowdate.split("-"); // 현재 날짜 배열
-        String[] expiration = new String[exprtationDate.length()];
-        expiration = exprtationDate.split("-"); // 유통기한 배열
+        String[] expiration = exprtationDate.split("-"); // 유통기한 배열
+        int exYear = Integer.parseInt(expiration[0]);
+        int exMonth = Integer.parseInt(expiration[1]);
+        int exDay = Integer.parseInt(expiration[2]);
+        String[] now = nowdate.split("-"); // 현재 날짜 배열
+        int year = Integer.parseInt(now[0]);
+        int month = Integer.parseInt(now[1]);
+        int day = Integer.parseInt(now[2]);
 
 
         //년도 먼저 비교
-        if (Integer.parseInt(expiration[0]) <= Integer.parseInt(now[0])) {
-            //월 비교
-            if (Integer.parseInt(expiration[1]) <= Integer.parseInt(now[1])) {
-                //일 비교
-                if (Integer.parseInt(expiration[2]) <= Integer.parseInt(now[2])) {
+        if(exYear == year || exYear < year){
+            // 월 비교
+            if(exMonth == month || exMonth < month){
+                // 날 비교
+                if(exDay <= day){
                     return false;
                 }
             }
         }
         return true;
+
     }
 }
