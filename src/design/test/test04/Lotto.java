@@ -6,6 +6,9 @@ public class Lotto {
 
     private int[] luckyNumber = new int[6];
 
+    public Lotto(){
+
+    }
 
     //수동 로또 만들때              0              1           2              3            4           5
     public void passiveLotto(int number1 , int number2, int number3, int number4, int number5, int number6){
@@ -49,14 +52,33 @@ public class Lotto {
     }
     Random random = new Random();
     //자동 로또 만들때
+
+    // 중복하는걸 어떻게 확인하지?
+    // 이건 내꺼 아닌듯... 좀 여러 도움들을 많이 받아서....
+    //다시 확인해보기
     public void autoLotto(){
         for(int i = 0; i < luckyNumber.length; i++){
+            int number = random.nextInt(6)+1;
+            boolean stopPoint = false;
+
             for(int j = 0; j < i; j ++){
-                int number = random.nextInt(45)+1;
+                if(luckyNumber[j] == number){
+                    stopPoint = true;
+                    break;
+                }
             }
+            if(stopPoint){
+                i--;
+            }else{
+                luckyNumber[i] = number;
+            }
+
         }
     }
 
+    public int checkLotto(int i){
+        return luckyNumber[i];
+    }
 
     public void printInfo(){
         for(int i = 0; i < luckyNumber.length; i++){

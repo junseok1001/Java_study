@@ -5,11 +5,18 @@ public class Test04 {
 
         Lotto lotto = new Lotto();
 
-        lotto.passiveLotto(1, 5, 42, 15, 30, 2);
-        lotto.printInfo();
+//        lotto.passiveLotto(1, 5, 42, 15, 30, 2);
+//        lotto.printInfo();
 
         lotto.autoLotto();
         lotto.printInfo();
+
+        LottoChecker lottoCheck = new LottoChecker();
+
+        lottoCheck.luckyLotto();
+        lottoCheck.printInfo();
+
+        lottoCheck.comparePaper();
 
 
     }
