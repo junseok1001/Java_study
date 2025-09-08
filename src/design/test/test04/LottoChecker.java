@@ -60,7 +60,7 @@ public class LottoChecker {
             case 2:
                 rank = 5;
                 break;
-            case 1:
+            default :
                 rank = 0;
         }
 

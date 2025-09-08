@@ -39,11 +39,11 @@ public class OmrCardReader {
     // 정답 비교해서 점수내기
     // 포인트를 이용하여 omr 에 1~5말고 다른 것을 칠했을때 그냥 0점 처리
     // 포인트를 이용하여 omr 정상적일때 비교 시작
-    OmrCard omr = new OmrCard("선생님" , "10101010");
-    public int compare(boolean point, int[] compareArray){
+    public int compare(boolean point, OmrCard omr){
+        int [] student = omr.viewomrCard();
         if(point == false){
             for(int i = 0; i < totalQuestion.length; i++){
-                if(totalQuestion[i] == compareArray[i]){
+                if(totalQuestion[i] == student[i]){
                     this.count++;
                 }
             }

@@ -40,8 +40,7 @@ public class Test03 {
 
         // 선생님 -> 체점하기
 
-        int score = reader.compare(breakPoint , omr.viewomrCard());
-
+        int score = reader.compare(breakPoint, omr);;
         omr.printInfo();
         System.out.println("점수 : "+ score);
 
