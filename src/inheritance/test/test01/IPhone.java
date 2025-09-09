@@ -13,6 +13,7 @@ public class IPhone extends IPodTouch{
     public IPhone(String phoneNumber){
         //super(); 생략하고 가져옴.
         this.phoneNumber = phoneNumber;
+        super.setModel("iphone");
     }
 
 
