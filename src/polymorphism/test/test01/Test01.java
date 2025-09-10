@@ -4,8 +4,8 @@ public class Test01 {
 
     public static void main(String[] args) {
         Animal[] animals = new Animal[2];
-        animals[0] = new Dog("호두");
-        animals[1] = new Cat("바다");
+        animals[0] = new Dog();
+        animals[1] = new Cat();
 
         for(int i = 0; i < animals.length; i++){
             for(int j = 0; j < 3; j++){

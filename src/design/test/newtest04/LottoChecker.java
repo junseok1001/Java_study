@@ -40,6 +40,7 @@ public class LottoChecker {
 //
 //    }
 
+    // 기능은 세부적으로 만들기
     // 당첨 개수 확인 기능
     public int checkCount(Lotto lotto){
 
