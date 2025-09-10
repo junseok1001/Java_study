@@ -1,4 +1,4 @@
-package abstracts.test;
+package abstracts.test.test01;
 
 public class Test01 {
     public static void main(String[] args) {
