@@ -1,9 +1,6 @@
 package list.test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Test03 {
 
@@ -27,7 +24,6 @@ public class Test03 {
 //        memberId.add("iu");
 //        memberId.add("cuteboy");
 //
-//        System.out.println(memberId);
 //
 //        Scanner scan = new Scanner(System.in);
 //
@@ -59,6 +55,24 @@ public class Test03 {
 //        numberList.add(10);
 //        numberList.add(9);
 //        numberList.add(4);
+//
+//        //정렬로 생각하기
+//        numberList.sort(Comparator.naturalOrder());
+//        System.out.println(numberList);
+//
+//        numberList.remove(numberList.size() - 1);
+//        numberList.remove(0);
+//
+//        int sum = 0;
+//        for(int score:numberList){
+//            sum += score;
+//        }
+//
+//        double average = sum / (double)numberList.size();
+//
+//        System.out.println("최고점과 최저점을 제외한 평균 점수는 " + average);
+
+
 //
 ////        int max = numberList.get(0);
 ////        int maxIndex = 0;
@@ -106,8 +120,31 @@ public class Test03 {
 //                출력 예시
 //
 //        [3, 6, 19, 26, 37, 44]
-//        List<Integer> lottoNumber = new ArrayList<>();
-//        Random random = new Random();
+        List<Integer> lotto = new ArrayList<>();
+        Random random = new Random();
+
+//        for(int i = 0; i < 6; i++){
+//
+//            int randomNumber = random.nextInt(45) + 1;
+//
+//            if(lotto.contains(randomNumber)){
+//                i--;
+//            }else{
+//                lotto.add(randomNumber);
+//            }
+//        }
+        // 리스트의 특징을 알면 접근 할수 있는 접근법
+        while(lotto.size() < 6){
+            int randomNumber = random.nextInt(45) + 1;
+
+            if(!lotto.contains(randomNumber)){
+                lotto.add(randomNumber);
+            }
+        }
+        lotto.sort(Comparator.naturalOrder());
+        System.out.println(lotto);
+
+
 //        int[] lottoArray = new int[6];
 //
 //        for(int i = 0 ; i < lottoArray.length; i++){
@@ -161,19 +198,33 @@ public class Test03 {
 
         //조건 같은 이름이면 1을 더한 값에 이름을 넣고 올라간 값을 넣어라
 
-        for(int i = 0; i < memberList.size(); i++){
-            int count = 0;
-            for(int j = 0; j < newMemberList.size(); j++){
-                if(newMemberList.get(j).contains(memberList.get(i))){
-                    count++;
-                    newMemberList.set(j, newMemberList.get(j) + count);
-                }
+//        for(int i = 0; i < memberList.size(); i++){
+//            int count = 0;
+//            for(int j = 0; j < newMemberList.size(); j++){
+//                if(newMemberList.get(j).contains(memberList.get(i))){
+//                    count++;
+//                    newMemberList.set(j, newMemberList.get(j) + count);
+//                }
+//            }
+//        }
+//
+//        for(int i = 0; i < newMemberList.size(); i++){
+//            memberList.add(newMemberList.get(i));
+//        }
+        for(int i = 0; i < newMemberList.size(); i++){
+            String newMember = newMemberList.get(i);
+
+            int count = 1;
+            while(memberList.contains(newMember)){
+
+                newMember = newMemberList.get(i) + count;
+                count++;
             }
+
+            memberList.add(newMember);
         }
 
-        for(int i = 0; i < newMemberList.size(); i++){
-            memberList.add(newMemberList.get(i));
-        }
+
 
 
         System.out.println(memberList);
