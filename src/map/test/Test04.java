@@ -56,7 +56,18 @@ public class Test04 {
             Map<String, String> characterInfo = characterList.get(i);
 
             if(characterInfo.get("서버").equals(myCharacter.get("서버"))){
-                System.out.println(characterInfo);
+                if(characterInfo.get("직업").equals("힐러")){
+
+                    //값을 비교할려면 두개의 정수값이 필요함. 그걸 어떻게 저장 시키지?
+                    // 반복문 재 실행되서도 그 정수값은 저장된걸 가지고 있어야지 비교가 가능함.
+
+                    //이거는 한개의 수만 저장하는데 재실행 될때마다 값이 바뀜 이 값을 재실행되도 안바뀌는걸로 만들어봐야함.
+
+
+
+
+
+                }
             }
         }
 
