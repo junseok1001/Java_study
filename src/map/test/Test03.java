@@ -59,6 +59,7 @@ public class Test03 {
 
             if(findMap.containsKey(searchBook)){
                 System.out.println(searchBook + "의 작가명은" + findMap.get(searchBook));
+                break;
             }
         }
 

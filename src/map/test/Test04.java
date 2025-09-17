@@ -1,9 +1,6 @@
 package map.test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Test04 {
 
@@ -51,26 +48,33 @@ public class Test04 {
         character5.put("레벨", "84");
         characterList.add(character5);
 
-
+        int max = 0;
+        Map<String, String> searchCharacter = null;
         for(int i =0; i < characterList.size(); i++){
+
             Map<String, String> characterInfo = characterList.get(i);
 
-            if(characterInfo.get("서버").equals(myCharacter.get("서버"))){
-                if(characterInfo.get("직업").equals("힐러")){
+            String sever = characterInfo.get("서버");
+            String mySever = myCharacter.get("서버");
+            String job = characterInfo.get("직업");
 
-                    //값을 비교할려면 두개의 정수값이 필요함. 그걸 어떻게 저장 시키지?
-                    // 반복문 재 실행되서도 그 정수값은 저장된걸 가지고 있어야지 비교가 가능함.
-
-                    //이거는 한개의 수만 저장하는데 재실행 될때마다 값이 바뀜 이 값을 재실행되도 안바뀌는걸로 만들어봐야함.
-
-
-
-
-
+            if(sever.equals(mySever) && job.equals("힐러")){
+            int number = Integer.parseInt(characterInfo.get("레벨"));
+                if(max < number){
+                max = number;
+                searchCharacter = characterInfo;
                 }
             }
         }
+        if(searchCharacter.containsValue(String.valueOf(max))){
+            Set<String> setKey = searchCharacter.keySet();
 
+            System.out.println("힐러 탐색 결과");
+            for(String info:setKey){
+                String value = searchCharacter.get(info);
+                System.out.println(info + " : " + value);
+            }
+        }
 
 
 
