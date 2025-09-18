@@ -19,12 +19,25 @@ public class Lotto {
         return numbers;
     }
 
+    @Override
+    public String toString(){
+        String str = "[";
+        for(int i = 0; i < numbers.length; i++){
+            str += numbers[i];
+            if(i < numbers.length - 1){
+                str += " ,";
+            }
+        }
+        return str + "]";
+    }
     public void printInfo(){
         for(int i = 0 ; i < numbers.length; i++){
             System.out.print(numbers[i] + " ");
         }
         System.out.println();
     }
+
+
 
 
 

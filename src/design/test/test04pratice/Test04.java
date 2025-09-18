@@ -7,5 +7,8 @@ public class Test04 {
 
         lotto.manual(5, 12, 20 , 40, 3 , 11);
 
+
+        System.out.println(lotto);
+
     }
 }

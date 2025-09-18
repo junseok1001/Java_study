@@ -48,6 +48,7 @@ public class Test04 {
         character5.put("레벨", "84");
         characterList.add(character5);
 
+
         int max = 0;
         Map<String, String> searchCharacter = null;
         for(int i =0; i < characterList.size(); i++){
@@ -59,10 +60,10 @@ public class Test04 {
             String job = characterInfo.get("직업");
 
             if(sever.equals(mySever) && job.equals("힐러")){
-            int number = Integer.parseInt(characterInfo.get("레벨"));
+                int number = Integer.parseInt(characterInfo.get("레벨"));
                 if(max < number){
-                max = number;
-                searchCharacter = characterInfo;
+                    max = number;
+                    searchCharacter = characterInfo;
                 }
             }
         }
@@ -75,6 +76,7 @@ public class Test04 {
                 System.out.println(info + " : " + value);
             }
         }
+
 
 
 
