@@ -7,6 +7,11 @@ public class Lotto {
     private int[] luckyNumber = new int[6];
 
 
+
+    public int getNumber(int i){
+        return this.luckyNumber[i];
+    }
+
     //수동 로또 만들때              0              1           2              3            4           5
     public void passiveLotto(int number1 , int number2, int number3, int number4, int number5, int number6){
         //첫번째

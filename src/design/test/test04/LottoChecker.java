@@ -39,7 +39,7 @@ public class LottoChecker {
     public void comparePaper(){
         int count = 0;
         for(int i = 0; i < getLotto.length; i++ ){
-            if(getLotto[i] == paper.checkLotto(i)){
+            if(getLotto[i] == paper.getNumber(i)){
                 count++;
             }
         }
