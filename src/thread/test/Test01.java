@@ -4,22 +4,24 @@ public class Test01 {
     public static void main(String[] args) {
 
 
-        Crying crying = new Crying();
-        Thread tiger = new Thread(crying);
+        Crying tiger = new Crying("어흥");
+        Crying cow = new Crying("음메~");
+        Crying horse = new Crying("히잉");
 
-        Barking barking = new Barking();
-        Thread cow = new Thread(barking);
+        Thread tigerThread = new Thread(tiger);
+        Thread cowThread = new Thread(cow);
+        Thread horseThread = new Thread(horse);
+
+        tigerThread.start();
+        cowThread.start();
 
         try {
-            cow.join();
+            tigerThread.join();
+            cowThread.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-
-        for(int i = 0; i < 5; i++){
-            System.out.println("히잉");
-        }
-
+        horseThread.start();
     }
 }
