@@ -19,8 +19,6 @@ public class Person {
     }
 
 
-
-
     @Override
     public String toString(){
         return "이름 : " + name + " 생년월일 : " + birthday;
