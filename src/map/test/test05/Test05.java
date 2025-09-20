@@ -24,14 +24,31 @@ public class Test05 {
         Scanner scan = new Scanner(System.in);
         int select = scan.nextInt();
 
-//        switch(select){
-//            case 1 :
-//                for(int i = 0; i < personList.size(); i++){
-//                    if()
-//                }
-//
-//
-//        }
+        switch(select){
+            case 1 :
+                for(int i = 0; i < personList.size(); i++){
+                    if(personList.isEmpty()){
+                        System.out.print("이름을 입력하세요");
+                        String name = scan.nextLine();
+                        System.out.println("생년월일을 입력하세요 : ");
+                        int birthday = scan.nextInt();
+                        Person person = new Person(name, birthday);
+                        break;
+                    }else{
+                        i--;
+                        break;
+                    }
+                }
+            case 2 :
+                for(int i = 0; i < personList.size(); i++){
+                    if(personList.isEmpty()){
+                        System.out.println();
+                    }
+                }
+
+
+
+        }
 
 
 
