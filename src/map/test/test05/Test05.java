@@ -20,36 +20,29 @@ public class Test05 {
 //
 //        무한 루프를 돌고, 4번을 누르면 입력 종료
 
-        List<Person> personList = new ArrayList<>();
-        Scanner scan = new Scanner(System.in);
-        int select = scan.nextInt();
+        while(true) {
+            List<Person> personList = new ArrayList<>();
+            Scanner scan = new Scanner(System.in);
+            int select = scan.nextInt();
 
-        switch(select){
-            case 1 :
-                for(int i = 0; i < personList.size(); i++){
-                    if(personList.isEmpty()){
-                        System.out.print("이름을 입력하세요");
-                        String name = scan.nextLine();
-                        System.out.println("생년월일을 입력하세요 : ");
-                        int birthday = scan.nextInt();
-                        Person person = new Person(name, birthday);
-                        break;
-                    }else{
-                        i--;
-                        break;
-                    }
-                }
-            case 2 :
-                for(int i = 0; i < personList.size(); i++){
-                    if(personList.isEmpty()){
-                        System.out.println();
-                    }
-                }
+            switch (select) {
 
+                case 1:
+                    System.out.print("이름을 입력하세요");
+                    String name = scan.nextLine();
+                    System.out.println("생년월일을 입력하세요");
+                    int birthday = scan.nextInt();
+                    personList.add(new Person(name, birthday));
 
+                case 2:
 
+                case 3:
+
+                case 4:
+                    System.out.println("종료합니다.");
+                    break;
+            }
         }
-
 
 
 
