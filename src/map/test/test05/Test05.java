@@ -59,7 +59,7 @@ public class Test05 {
                     Iterator<Person> iter = personList.iterator();
                     System.out.print("삭제할 이름을 입력하세요");
                     while(iter.hasNext()){
-                        Person person = iter.next();
+                        Person person = iter.next(); //이거 조정하면 될거 같은데....
                         String personName = person.getName();
                         String removeName = scan.nextLine();
                         if(personName.equals(removeName)){
