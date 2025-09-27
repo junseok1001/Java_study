@@ -9,7 +9,16 @@ public class Goods {
     public Goods(String name, int price, String status){
         this.name = name;
         this.price=price;
-        this.status=status;
+        if(status.equals("판매중")){
+            this.status = status;
+        }else if (status.equals("판매 완료")){
+            this.status = status;
+        }else if(status.equals("예약중")){
+            this.status = status;
+        }else{
+            System.out.println("판매상태가 유효하지 않습니다.");
+            this.status = null;
+        }
     }
 
 

@@ -2,6 +2,7 @@ package map.test.test06;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Market {
     public static void main(String[] args) {
@@ -32,5 +33,74 @@ public class Market {
 //        상품명으로 물품 삭제 → "삭제되었습니다."
 
         List<Goods> hongDangMoo = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+
+
+        for(int i = 0; ; ){
+            System.out.print("모드를 입력하세요");
+            String input = scan.next();
+            char inputChar = input.charAt(0);
+            if(inputChar == 'c'){
+                System.out.print("이름를 입력하세요");
+                String name = scan.next();
+                System.out.println();
+                System.out.print("가격을 입력하세요");
+                int price = scan.nextInt();
+                System.out.println();
+                System.out.print("판매 상태를 입력하세요");
+                String status = scan.next();
+                System.out.println();
+                if(hongDangMoo.isEmpty()){
+                    Goods product = new Goods(name,price, status);
+                    if(!product.getStatus().equals(null)){
+                        hongDangMoo.add(product);
+//                    for(int j = 0; j < hongDangMoo.size(); j++){
+//                        Goods goodsList = hongDangMoo.get(j);
+//                        if(!goodsList.equals("판매상태가 유효하지 않습니다."))
+//                            hongDangMoo.add(new Goods(name, price, status));
+                    }else{
+                        System.out.println("판매상태가 유효하지 않습니다.");
+                    }
+                }else{
+                    for(int j = 0; j < hongDangMoo.size(); j++){
+                        Goods goodsList = hongDangMoo.get(j);
+                        String goods = goodsList.getName();
+
+                        if(goods.equals(name)){
+                            System.out.println("등록된 상품이 존재합니다.");
+                            break;
+                        }
+
+                    }
+
+                    Goods product = new Goods(name,price, status);
+                    if(!product.getStatus().equals(null)){
+                        hongDangMoo.add(product);
+//                    for(int j = 0; j < hongDangMoo.size(); j++){
+//                        Goods goodsList = hongDangMoo.get(j);
+//                        if(!goodsList.equals("판매상태가 유효하지 않습니다."))
+//                            hongDangMoo.add(new Goods(name, price, status));
+                    }else{
+                        try{
+                            product.getStatus().equals(null);
+                        }catch(NullPointerException e){
+                            System.out.println("판매상태가 유효하지 않습니다.");
+                        }
+                    }
+                }
+
+            }else if (inputChar == 'b'){
+                if(hongDangMoo.isEmpty()){
+                    System.out.println("비어 있습니다");
+                }else{
+                    for(int j = 0; j < hongDangMoo.size(); j++){
+                        Goods goodsList = hongDangMoo.get(j);
+                        System.out.println(goodsList);
+                    }
+                }
+
+            }
+
+        }
     }
 }
