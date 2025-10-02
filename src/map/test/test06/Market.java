@@ -23,6 +23,8 @@ public class Market {
             }else{
                 System.out.println("판매상태가 유효하지 않습니다.");
             }
+        }else{
+            System.out.println("등록된 상품 이 있습니다.");
         }
 
     }
@@ -50,18 +52,27 @@ public class Market {
 //    메서드1: 상품명으로 물품의 가격 수정 → "수정되었습니다."
 //    메서드2: 상품명으로 판매상태 수정 (판매상태 정의된 값 외 입력 불가)
 
-    public void update(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("모드를 선택하세요");
-        System.out.println("1 : 해당 이름의 가격 수정");
-        System.out.println("2 : 해당 이름의 판매상태 수정");
-        int mode = scan.nextInt();
-        if(mode == 1){
-
+    public void updateStatus(String name , String status){
+        Goods goods = findGoods(name);
+        if(goods == null){
+            System.out.println("수정할 상품이 존재하지 않습니다");
+        }else{
+            if(isSellStatus(status)){
+                goods.setStatus(status);
+            }else{
+                System.out.println("판매상태가 유효하지 않습니다.");
+            }
         }
 
+    }
 
-
+    public void updatePrice(String name, int price){
+        Goods goods = findGoods(name);
+        if(goods == null){
+            System.out.println("수정할 상품이 존재하지 않습니다");
+        }else{
+            goods.setPrice(price);
+        }
     }
 
 //    (D: delete)
@@ -97,7 +108,6 @@ public class Market {
     public Goods findGoods(String name){
         for(Goods item:goodsList){
            if(name.equals(item.getName())){
-               System.out.println("등록된 상품이 존재합니다.");
                return item;
            }
         }

@@ -27,17 +27,14 @@ public class Goods {
 
     public void setName(String name){
         this.name=name;
-        System.out.println("수정 완료 했습니다.");
     }
 
     public void setPrice(int price){
         this.price=price;
-        System.out.println("수정 완료 했습니다.");
     }
 
     public void setStatus(String status){
         this.status=status;
-        System.out.println("수정 완료 했습니다.");
     }
 
 
