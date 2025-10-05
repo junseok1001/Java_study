@@ -5,102 +5,117 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Market {
-    public static void main(String[] args) {
 
-//        1. 홍당무 마켓에 판매할 물건 올리기
-//        판매자 입장으로 홍당무 마켓에 판매할 물건 올리기 (적당한 자료구조를 선택해서 구현하세요)
+
+    private List<Goods> goodsList = new ArrayList<>();
+
+
+    //    (C: create, insert)
 //
-//        Goods 객체: 물품명, 가격, 판매상태(판매중, 판매완료, 예약중)
-//        Market 객체: CRUD 메서드 구현
-//                (C: create, insert)
-//
-//        같은 상품명 중복 불가 → "등록된 상품이 존재합니다."
-//        물품명, 가격, 판매상태를 입력받는다. (판매상태 정의된 값 외 입력 불가 → "판매상태가 유효하지 않습니다.")
-//        (R: read, select)
-//
-//        비어있는 경우 → "비어있습니다"
-//        상품 리스트 출력
-//        물품명: oo, 가격: oo, 판매상태: 판매중
-//        물품명: oo, 가격: oo, 판매상태: 예약중
-//                (U: update)
-//
-//        존재하는 상품인지 확인 → "수정할 상품이 존재하지 않습니다."
-//        메서드1: 상품명으로 물품의 가격 수정 → "수정되었습니다."
-//        메서드2: 상품명으로 판매상태 수정 (판매상태 정의된 값 외 입력 불가)
-//        (D: delete)
-//
-//        존재하는 상품인지 확인 → "삭제할 상품이 존재하지 않습니다."
-//        상품명으로 물품 삭제 → "삭제되었습니다."
+//    같은 상품명 중복 불가 → "등록된 상품이 존재합니다."
+//    물품명, 가격, 판매상태를 입력받는다. (판매상태 정의된 값 외 입력 불가 → "판매상태가 유효하지 않습니다.")
+    public void create(String name, int price, String status){
+        Goods item = findGoods(name);
 
-        List<Goods> hongDangMoo = new ArrayList<>();
-        Scanner scan = new Scanner(System.in);
-
-
-        for(int i = 0; ; ){
-            System.out.print("모드를 입력하세요");
-            String input = scan.next();
-            char inputChar = input.charAt(0);
-            if(inputChar == 'c'){
-                System.out.print("이름를 입력하세요");
-                String name = scan.next();
-                System.out.println();
-                System.out.print("가격을 입력하세요");
-                int price = scan.nextInt();
-                System.out.println();
-                System.out.print("판매 상태를 입력하세요");
-                String status = scan.next();
-                System.out.println();
-                if(hongDangMoo.isEmpty()){
-                    Goods product = new Goods(name,price, status);
-                    if(!product.getStatus().equals(null)){
-                        hongDangMoo.add(product);
-//                    for(int j = 0; j < hongDangMoo.size(); j++){
-//                        Goods goodsList = hongDangMoo.get(j);
-//                        if(!goodsList.equals("판매상태가 유효하지 않습니다."))
-//                            hongDangMoo.add(new Goods(name, price, status));
-                    }else{
-                        System.out.println("판매상태가 유효하지 않습니다.");
-                    }
-                }else{
-                    for(int j = 0; j < hongDangMoo.size(); j++){
-                        Goods goodsList = hongDangMoo.get(j);
-                        String goods = goodsList.getName();
-
-                        if(goods.equals(name)){
-                            System.out.println("등록된 상품이 존재합니다.");
-                            break;
-                        }
-
-                    }
-
-                    Goods product = new Goods(name,price, status);
-                    if(!product.getStatus().equals(null)){
-                        hongDangMoo.add(product);
-//                    for(int j = 0; j < hongDangMoo.size(); j++){
-//                        Goods goodsList = hongDangMoo.get(j);
-//                        if(!goodsList.equals("판매상태가 유효하지 않습니다."))
-//                            hongDangMoo.add(new Goods(name, price, status));
-                    }else{
-                        try{
-                            product.getStatus().equals(null);
-                        }catch(NullPointerException e){
-                            System.out.println("판매상태가 유효하지 않습니다.");
-                        }
-                    }
-                }
-
-            }else if (inputChar == 'b'){
-                if(hongDangMoo.isEmpty()){
-                    System.out.println("비어 있습니다");
-                }else{
-                    for(int j = 0; j < hongDangMoo.size(); j++){
-                        Goods goodsList = hongDangMoo.get(j);
-                        System.out.println(goodsList);
-                    }
-                }
-
+        if(item == null){
+            if(isSellStatus(status)){
+                goodsList.add(new Goods(name,price, status));
+            }else{
+                System.out.println("판매상태가 유효하지 않습니다.");
             }
-
+        }else{
+            System.out.println("등록된 상품 이 있습니다.");
         }
+
+    }
+
+
+//    (R: read, select)
+//
+//    비어있는 경우 → "비어있습니다"
+//    상품 리스트 출력
+//    물품명: oo, 가격: oo, 판매상태: 판매중
+//    물품명: oo, 가격: oo, 판매상태: 예약중
+
+    public void read(){
+        if(goodsList.isEmpty()){
+            System.out.println("비어 있습니다");
+        }else{
+            System.out.println(goodsList);
+        }
+    }
+
+
+//    (U: update)
+//
+//    존재하는 상품인지 확인 → "수정할 상품이 존재하지 않습니다."
+//    메서드1: 상품명으로 물품의 가격 수정 → "수정되었습니다."
+//    메서드2: 상품명으로 판매상태 수정 (판매상태 정의된 값 외 입력 불가)
+
+    public void updateStatus(String name , String status){
+        Goods goods = findGoods(name);
+        if(goods == null){
+            System.out.println("수정할 상품이 존재하지 않습니다");
+        }else{
+            if(isSellStatus(status)){
+                goods.setStatus(status);
+            }else{
+                System.out.println("판매상태가 유효하지 않습니다.");
+            }
+        }
+
+    }
+
+    public void updatePrice(String name, int price){
+        Goods goods = findGoods(name);
+        if(goods == null){
+            System.out.println("수정할 상품이 존재하지 않습니다");
+        }else{
+            goods.setPrice(price);
+        }
+    }
+
+//    (D: delete)
+//
+//    존재하는 상품인지 확인 → "삭제할 상품이 존재하지 않습니다."
+//    상품명으로 물품 삭제 → "삭제되었습니다."
+
+
+
+    public void priceCorrection(String name, int price){
+        for(Goods goods:goodsList){
+            if(name.equals(goods.getName())){
+                goods.setPrice(price);
+                break;
+            }
+        }
+    }
+
+    public void statusCorrection(String name, String status){
+        if(isSellStatus(status)){
+            for(Goods goods:goodsList){
+                if(name.equals(goods.getName())){
+                    goods.setStatus(status);
+                    break;
+                }
+            }
+        }else{
+            System.out.println("판매상태가 유효하지 않습니다.");
+        }
+    }
+
+
+    public Goods findGoods(String name){
+        for(Goods item:goodsList){
+            if(name.equals(item.getName())){
+                return item;
+            }
+        }
+        return null;
+    }
+
+
+    public boolean isSellStatus(String status) {
+        return status.equals("판매중") || status.equals("판매완료") || status.equals("예약중");
     }
 }
