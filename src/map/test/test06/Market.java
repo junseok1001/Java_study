@@ -1,8 +1,8 @@
 package map.test.test06;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
 
 public class Market {
 
@@ -80,6 +80,19 @@ public class Market {
 //    존재하는 상품인지 확인 → "삭제할 상품이 존재하지 않습니다."
 //    상품명으로 물품 삭제 → "삭제되었습니다."
 
+    public void delete(String name){
+        Iterator<Goods> iter = goodsList.iterator();
+        if(iter.hasNext()){
+            Goods goods = iter.next();
+            String goodsName = goods.getName();
+            if(goodsName.equals(name)){
+                iter.remove();
+
+            }else{
+                System.out.print("삭제할 상품이 존재하지 않습니다.");
+            }
+        }
+    }
 
 
     public void priceCorrection(String name, int price){

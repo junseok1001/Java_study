@@ -13,6 +13,9 @@ public class Test06 {
         market.updatePrice("오준석", 20000);
         market.read();
 
+        market.delete("이수진");
+        market.read();
+
 
 
     }
