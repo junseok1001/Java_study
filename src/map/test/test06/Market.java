@@ -10,7 +10,7 @@ public class Market {
     private List<Goods> goodsList = new ArrayList<>();
 
 
-//    (C: create, insert)
+    //    (C: create, insert)
 //
 //    같은 상품명 중복 불가 → "등록된 상품이 존재합니다."
 //    물품명, 가격, 판매상태를 입력받는다. (판매상태 정의된 값 외 입력 불가 → "판매상태가 유효하지 않습니다.")
@@ -120,9 +120,9 @@ public class Market {
 
     public Goods findGoods(String name){
         for(Goods item:goodsList){
-           if(name.equals(item.getName())){
-               return item;
-           }
+            if(name.equals(item.getName())){
+                return item;
+            }
         }
         return null;
     }

@@ -1,6 +1,7 @@
 package map.test.test06;
 
 public class Goods {
+
     private String name;
     private int price;
     private String status;
@@ -8,9 +9,8 @@ public class Goods {
     public Goods(String name, int price, String status){
         this.name = name;
         this.price=price;
-        this.status = status;
+        this.status=status;
     }
-
 
 
     public String getName(){
@@ -25,22 +25,21 @@ public class Goods {
         return status;
     }
 
-    public void setName(String name){
-        this.name=name;
+    public void setStatus(String status){
+        this.status=status;
     }
 
     public void setPrice(int price){
         this.price=price;
     }
 
-    public void setStatus(String status){
-        this.status=status;
-    }
-
 
     @Override
     public String toString(){
-        return "상품명 : " + name + " 상품가격 : " + price + " 판매상태 : " + status;
+        return "상품명 : " + name + "상품가격 : " + price + "판매상태 : " + status;
     }
+
+
+
 
 }
