@@ -10,10 +10,11 @@ public class Test06 {
         market.create("이수진", 10000, "판매중");
         market.read();
 
-        market.updatePrice("오준석", 20000);
+        market.updateInfo("오준석", "판매완료");
         market.read();
 
         market.delete("이수진");
+        market.delete("전수홍");
         market.read();
 
 

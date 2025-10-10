@@ -36,7 +36,7 @@ public class Goods {
 
     @Override
     public String toString(){
-        return "상품명 : " + name + "상품가격 : " + price + "판매상태 : " + status;
+        return "상품명 : " + name + " 상품가격 : " + price + " 판매상태 : " + status;
     }
 
 

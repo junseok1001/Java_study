@@ -52,7 +52,7 @@ public class Market {
 //    메서드1: 상품명으로 물품의 가격 수정 → "수정되었습니다."
 //    메서드2: 상품명으로 판매상태 수정 (판매상태 정의된 값 외 입력 불가)
 
-    public void updateStatus(String name , String status){
+    public void updateInfo(String name , String status){
         Goods goods = findGoods(name);
         if(goods == null){
             System.out.println("수정할 상품이 존재하지 않습니다");
@@ -66,7 +66,7 @@ public class Market {
 
     }
 
-    public void updatePrice(String name, int price){
+    public void updateInfo(String name, int price){
         Goods goods = findGoods(name);
         if(goods == null){
             System.out.println("수정할 상품이 존재하지 않습니다");
@@ -82,17 +82,16 @@ public class Market {
 
     public void delete(String name){
         Iterator<Goods> iter = goodsList.iterator();
-        if(iter.hasNext()){
+        while(iter.hasNext()){
             Goods goods = iter.next();
             String goodsName = goods.getName();
             if(goodsName.equals(name)){
                 iter.remove();
-
-            }else{
-                System.out.print("삭제할 상품이 존재하지 않습니다.");
             }
+
         }
     }
+
 
 
     public void priceCorrection(String name, int price){
